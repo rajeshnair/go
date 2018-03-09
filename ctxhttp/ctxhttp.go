@@ -69,6 +69,7 @@ func Post(ctx context.Context, client *http.Client, url string, bodyType string,
 		return nil, err
 	}
 	req.Header.Set("Content-Type", bodyType)
+	req.Header.Set("Accept", bodyType)
 	return Do(ctx, client, req)
 }
 
